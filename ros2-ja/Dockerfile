@@ -7,8 +7,7 @@ RUN apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys 421C365BD9FF1
 RUN sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu xenial main" > /etc/apt/sources.list.d/gazebo-latest.list'
 RUN apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys D2486D2DD83DB69272AFE98867170598AF249743
 
-RUN apt-get update
-RUN apt-get -q -y install \
+RUN apt-get update && apt-get -q -y install \
     git wget build-essential cppcheck cmake \
     libopencv-dev libpoco-dev libpocofoundation9v5 libpocofoundation9v5-dbg \
     python-empy python3-dev python3-empy python3-nose python3-pip python3-setuptools python3-vcstool \
