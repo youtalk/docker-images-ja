@@ -20,3 +20,8 @@ RUN wget https://raw.githubusercontent.com/ros2/ros2/release-latest/ros2.repos
 RUN vcs import src < ros2.repos
 
 RUN src/ament/ament_tools/scripts/ament.py build --build-tests --symlink-install --isolated
+
+COPY ./ros2_entrypoint.sh /
+
+ENTRYPOINT ["/ros2_entrypoint.sh"]
+CMD ["bash"]
