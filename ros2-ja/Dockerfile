@@ -1,14 +1,5 @@
-# This is an auto generated Dockerfile for ros2:ros2
-# generated from templates/docker_images/create_ros2_image.Dockerfile.em
-# generated on 2016-07-15 16:28:44 +0000
-FROM ubuntu:xenial
-MAINTAINER Tully Foote tfoote+buildfarm@osrfoundation.org
-
-# ROS1 Repo Setup ##############################################################
-# setup environment
-RUN apt-get update && apt-get install -q -y locales && rm -rf /var/lib/apt/lists/*
-RUN locale-gen en_US.UTF-8
-ENV LANG en_US.UTF-8
+FROM youtalk/ubuntu-ja:xenial
+MAINTAINER Yutaka Kondo <yutaka.kondo@youtalk.jp>
 
 # setup keys
 RUN apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys 421C365BD9FF1F717815A3895523BAEEB01FA116
