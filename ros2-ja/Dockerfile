@@ -61,7 +61,8 @@ WORKDIR /root/ros2_ws/src/..
 RUN src/ament/ament_tools/scripts/ament.py \
     build \
     --build-tests \
-    --symlink-install
+    --symlink-install \
+    --cmake-args -DEPROSIMA_BUILD=ON --
 
 # setup entrypoint
 COPY ./ros2_entrypoint.sh /
