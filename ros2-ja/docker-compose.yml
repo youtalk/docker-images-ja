@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  talker:
+    image: youtalk/ros2-ja:xenial
+    command: talker
+    networks:
+      - ros2
+  listener:
+    image: youtalk/ros2-ja:xenial
+    command: listener
+    networks:
+      - ros2
+
+networks:
+  ros2:
+    driver: bridge
